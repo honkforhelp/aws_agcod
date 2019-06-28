@@ -10,7 +10,7 @@ module AGCOD
 
     def_delegators :@response, :status, :success?, :error_message
 
-    def initialize(request_id, amount, currency = "USD")
+    def initialize(request_id, email, amount, currency = "USD")
       unless CURRENCIES.include?(currency.to_s)
         raise CreateGiftCardError, "Currency #{currency} not supported, available types are #{CURRENCIES.join(", ")}"
       end
